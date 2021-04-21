@@ -1,0 +1,90 @@
+#img{
+    border-radius: 50px;
+    width: 300px;
+    
+
+
+}
+#sh,#signup{
+	display: block;
+}
+	
+#tras{
+	display: none;
+	width: 20%;
+	height: 10vh;
+	background-color: grey;
+	border-radius: 50px;
+	margin-left: 250px;
+	padding:100px;
+}
+#chat{
+	width:30px;
+	 margin-left: 1080px;
+	 position: fixed;
+	 bottom: 50px; 
+	background-color:  red;
+}
+#roll{
+	width: 50px;
+	 
+	 display: block;
+}
+body{
+	background-color:rgb(105, 172, 226)
+}
+#nav{
+    font-size: larger;
+    padding-left: 100px;
+    top: 0;
+    height: 50px;
+    
+}
+.img{
+	width: 50px;
+	padding:10px;
+}
+.fm{
+	outline: none	;
+	border-radius: 50px;
+	border-color: yellow;
+   color: white;
+   background-color: black;
+  text-align: center
+  ;
+}
+button:hover{
+    font-family: 'Courier New', Courier, monospace;
+}
+#nav:hover{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#body{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+
+
+#set{
+
+    display: block;
+}
+#bal{
+	width: 100px;
+	color: white;
+background-color: rgb(179, 41, 41);
+left: 1000px;
+position: absolute;
+top: 150px;
+
+}
+footer{
+	padding: 5vh;
+	color: white;
+	background-color: black;
+	}
+	#part{
+		margin: 30px;
+		color: white;
+	}

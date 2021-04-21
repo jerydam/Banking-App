@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon"  href="image/code.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Bank/Portal</title>
+</head>
+<body class=" lg-m-5 md-m3 bg-info sm-m-0 text-light" >
+<nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+    <div  class="container-fluid mx-3 text-right">
+      <a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+			<a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+            <a  id="admin" style="display: none;" href="admin.html" class="nav-link mx-3 active text-light btn  ">Admin parnel</a>
+        
+              <a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+        
+      
+                    <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+                  <a onclick="login()" id="portal" style="display:none;" class="nav-link mx-3 active text-light btn ">Personal Portal  </button>
+                
+                  <a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+                  
+                
+          
+      </div>
+    </div>
+  </nav>
+  <a href="jerychatapp.html"><img id="chat" src="image/chat.png" alt=""></a>
+    <center>
+        <div id="log">
+        <form  class="text-light">
+          <label >Account number</label>
+          <input type="text" placeholder="acctNo" id="luname" name=""><br><br>
+          <label >Password</label>
+          <input type="password" placeholder="password" id="lpassword" name=""><br><br>
+        </form>
+        <button onclick="login()" class="btn btn-success ">Login</button><br><br>
+        
+        <a href="signup.html"> create new account</a>
+      </div>
+   
+      </center>
+
+
+
+
+      <!-- PORTAL -->
+      <center>
+      <main style="display: none;" id="port"> 
+      <div id="show"></div>
+	<div style="background-color: black;color: white;" id="bal"></div>
+
+		  First name: <input type="text" disabled  id="pname" placeholder="First name" name=""><br><br>
+		 Last name: <input type="text" disabled  id="lname" placeholder="Last name" name=""><br><br>
+		  Username: <input type="text" disabled id="uname" placeholder="Username" name=""><br><br>
+		  phone number: <input type="number" disabled id="pame" placeholder="Phonenumber" name=""><br><br>
+		  Date of birth:<input type="" disabled  id="pob" placeholder="DOB" name=""><br><br>
+		 Email: <input type="email" disabled   id="mail" placeholder="email" name=""><br>
+<br>
+		  <a class="btn btn-success" href="transfer.html">Transfer</a>
+		</div>
+  </center>
+    <div style="display:none;" id="bal">N</div>
+<section id="psp">
+  
+  
+  
+	</main>
+
+ <script>
+      ;
+
+let listOfCustomer;
+listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+
+     function login() {
+for (var i = 0; i < listOfCustomer.length; i++) {
+  if (listOfCustomer[i].acctn0 != luname.value && listOfCustomer[i].Password != lpassword.value) {
+        alert('details not matched');
+      
+  }
+
+else{
+  port.style.display="block"
+  portal.style.display="block"
+  admin.style.display="block"
+  log.style.display="none"
+
+          pname.value = listOfCustomer[i].Firstname;
+					lname.value = listOfCustomer[i].Lastname;
+					pame.value = listOfCustomer[i].Phonenumber;
+					uname.value=listOfCustomer[i].Username;
+					mail.value = listOfCustomer[i].Email
+					pob.value =listOfCustomer[i].date;
+        show.innerHTML =  listOfCustomer[i].acctn0;
+    
+    }
+
+
+ }
+
+
+
+}
+
+
+ </script>   
+</body>
+</html>

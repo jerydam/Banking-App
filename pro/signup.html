@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <link rel="shortcut icon"  href="image/code.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+	<title>Sign</title>
+</head>
+<body class=" lg-m-5 md-m3 sm-m-0 bg-info text-light" >
+  <nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+    <div  class="container-fluid mx-3 text-right">
+      <a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+              <a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+        
+      
+                    <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+                  
+                
+                  <a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+                  
+                
+          
+      </div>
+    </div>
+  </nav>
+ <center>
+  <a href="jerychatapp.html"><img style="width:30px; margin-left: 1000px;position: fixed;bottom: 50px;" src="image/wat.jpg" alt=""></a>
+   <h2 class="text-light">Please input your details below</h2>
+    <div id="form">
+  <form class="text-light">
+    <input class="fm" type="text"  id="fname" placeholder="First name" name=""><br><br>
+    <input class="fm"type="text"  id="lname" placeholder="Last name" name=""><br><br>
+    <input class="fm"type="text"  id="uname" placeholder="Username" name=""><br><br>
+    <input class="fm"type="date"  id="dob" placeholder="DOB" name=""><br><br>
+    <input class="fm"type="email"  id="email" placeholder="email" name=""><br><br>
+    <input type="number" class="fm" id="call" placeholder="Phone number"><br><br>
+    <input class="fm"type="password"  id="password" placeholder="password" name=""><br><br>
+    <input class="fm"type="password"  id="cpassword" placeholder="confirm password" name="">
+    <h4>Gender</h4>
+    <label>male</label>
+    <input  type="radio" id="me"  name="m">
+    <label>Female</label>
+    <input  type="radio" id="we"  name="m"><br><br>
+    <label>input your photo</label>
+    <input  type="file"  id="photo" name="">
+  </form>
+  <button onclick="sign()">Sign up</button>
+</div>
+</center>
+<div id="part">
+  <h3>partnership with:</h3>
+     <a href=""><img src="image/deloitte.png"></a>
+     <a href=""><img style="width: 70px;" src="image/sqi.jpg"></a>
+ </div>
+ <footer>
+  
+    
+ 
+     <h3>contact us on:</h3>
+     <a href="facebook.com/jeremiahoyeniran"><img class="img" src="image/download.jpg"></a>
+     <a href="instagram.com/jerydan148"><img class="img" src="image/inst.png"></a>
+     <a href="linkedin.com/jeremiah-oyeniran-9b1587205"><img class="img" src="image/link.png"></a>
+     <a href="jerydan148@gmail.com"><img class="img" src="image/gmail.png"></a>
+     <a href="twitter.com/jery91512303"><img class="img" src="image/twi.png"></a>
+     <a href="facebook.com/jeremiahoyeniran"><img class="img" src="image/wat.jpg"></a>
+   
+   <h3><a href="try.html"style="text-decoration: none; font-size: xx-large;">About Us</a></h3>
+ </footer>
+<script>
+  var balance= 10000;
+
+let listOfCustomer;
+listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+
+	function sign() {
+  var acct =  Math.floor(Math.random()*10000000000+1);
+  
+ var newCustomer = {
+Firstname:fname.value,
+Lastname : lname.value,
+Username: uname.value,
+date :dob.value,
+Password:password.value,
+ Email:email.value,
+Photo:photo.value,
+acctn0:acct,
+Male:me.checked,
+Female:we.checked,
+Phonenumber: call.value,
+Balance:50000
+}
+listOfCustomer.push(newCustomer)
+  // localStorage.Details=allCustomer;
+  localStorage.setItem('allCustomer', JSON.stringify(listOfCustomer ));
+   var  name=fname.value+" "+ lname.value;
+    
+  if (fname.value=="" || lname.value=="" || uname.value=="" ||dob.value=="" ||password.value=="" || email.value =="" ) {
+    alert("Please fill in your Details")
+  }
+
+	else if(password.value != cpassword.value){
+		alert("Password don't match")
+	}
+else{
+  alert("Registration Success, welcome to My world")
+  alert("Dear " +name+" your account number is "+ acct + " you can now receive fund. Kindly visit any of our Branch to collect your Card"  )
+
+}
+
+  }
+</script>
+</body>
+</html>

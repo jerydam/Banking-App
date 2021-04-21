@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="shortcut icon"  href="image/code.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Bank</title>
+</head>
+<body class=" lg-m-5 md-m3 bg-info sm-m-0 text-light" >
+<nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+    <div  class="container-fluid mx-3 text-right">
+      <a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+        
+              <a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+        
+      
+                    <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+                
+                
+                  <a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+                  
+                
+          
+      </div>
+    </div>
+  </nav>
+  
+  <a href="jerychatapp.html"><img id="chat" src="image/chat.png" alt=""></a>
+  
+ <img id="pass" src="" alt="">
+  <section id="set">
+  <marquee behavior=""class="text-lg" direction="left"><h4 class="text-danger">YOUR PROFIT IS OUR JOY</h4></marquee>
+ <main class="text-center">
+   <div id="body">
+     <h2 class="text-light"><p style="margin-right: 150px; font-weight: 1000; font-size: xx-large;margin-top: 200px;">
+       Better Solution <br> for you and your <br> <strong>Business </strong> 
+     </p></h2>
+        <img  id="img" src="image/code.jpeg" alt="">
+      </div>
+        <p class="mt-5 text-light">We are always ready for your Security<img style="width:23px;" src="image/thumb.png" alt=""></p>
+        </main>
+</section>
+
+<div id="part">
+ <h3>partnership with:</h3>
+    <a href=""><img src="image/deloitte.png"></a>
+    <a href=""><img style="width: 70px;" src="image/sqi.jpg"></a>
+</div>
+<footer>
+ 
+   
+
+    <h3>contact us on:</h3>
+    <a href="facebook.com/jeremiahoyeniran"><img class="img" src="image/download.jpg"></a>
+    <a href="instagram.com/jerydan148"><img class="img" src="image/inst.png"></a>
+    <a href="linkedin.com/jeremiah-oyeniran-9b1587205"><img class="img" src="image/link.png"></a>
+    <a href="jerydan148@gmail.com"><img class="img" src="image/gmail.png"></a>
+    <a href="twitter.com/jery91512303"><img class="img" src="image/twi.png"></a>
+    <a href="facebook.com/jeremiahoyeniran"><img class="img" src="image/wat.jpg"></a>
+  
+  <h3><a href="try.html"style="text-decoration: none; font-size: xx-large;">About Us</a></h3>
+</footer>
+<script>
+var balance= 10000;
+
+   let listOfCustomer;
+   listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+  
+ var newCustomer = {
+ 
+
+// Firstname:fname.value,
+// Lastname : lname.value,
+// Username: uname.value,
+// date :dob.value,
+// Password:password.value,
+//  Email:email.value,
+// Photo:photo.value,
+// acctn0:acct,
+
+}
+function out(){
+  prompt('are you sure')
+  sh.style.display="none"
+    signu.style.display="none";
+    signup.style.display="block";
+    roll.style.display="block";
+    log.style.display="none"
+    set.style.display="block";
+    form.style.display="none";
+    admin.style.display="none"
+    portal.style.display="none"
+    port.style.display="none"
+    logi.style.display="block"
+    logo.style.display="block"
+    wel.style.display="none"
+    data.style.display="none"
+    tran.style.display="none";
+   tra.style.display="none"
+   tr.style.display="none"
+  bal.style.display="none";
+    
+  }
+  function house(){
+    sh.style.display="none"
+    tran.style.display="none";
+   tra.style.display="none"
+   tr.style.display="none"
+  bal.style.display="none";
+    roll.style.display="block";
+    signu.style.display="none";
+    signup.style.display="block";
+  	log.style.display="none"
+    set.style.display="block";
+    form.style.display="none";
+    admin.style.display="none"
+    portal.style.display="none"
+    port.style.display="none"
+    logi.style.display="block"
+    logo.style.display="block"
+    wel.style.display="none"
+    data.style.display="none"
+    
+  }
+  
+  function lo(){
+    sh.style.display="none"
+     roll.style.display="block";
+  	port.style.display="none"
+    signu.style.display="none";
+  	log.style.display="block"
+  	set.style.display="none";
+    set.style.display="none";
+    form.style.display="none";
+    admin.style.display="none"
+    portal.style.display="none"
+    logi.style.display="block"
+    logo.style.display="none"
+    data.style.display="none"
+    
+  }
+  function myFunc(){
+     roll.style.display="none";
+  	port.style.display="none"
+    signu.style.display="none";
+    signup.style.display="block";
+  	data.style.display="none"
+    set.style.display="none";
+    form.style.display="block";
+    log.style.display="none";
+    admin.style.display="none"
+    portal.style.display="none"
+    logi.style.display="none"
+    logo.style.display="none"
+    sh.style.display="none"
+    
+    
+}
+
+function login() {
+
+for (var i = 0; i < listOfCustomer.length; i++) {
+  if (listOfCustomer[i].Username != luname.value && listOfCustomer[i].Password != lpassword.value) {
+     alert('ERROR')
+   signu.style.display="block";
+     break;
+     
+   }
+   if (listOfCustomer[i].Username == luname.value && listOfCustomer[i].Password == lpassword.value) {
+     Portals()
+}
+// else{
+//      alert('invalid details')
+    // }
+
+
+  }
+
+
+
+} function Portals() { signu.style.display="none"; port.style.display="block"
+log.style.display="none";
+ set.style.display="none"; 
+form.style.display="none";
+ signup.style.display="none"
+portal.style.display="block" 
+psp.style.display="block"
+logi.style.display="none" 
+logo.style.display="block"
+admin.style.display="block"
+ bal.style.display="block"
+  sh.style.display="none"
+    
+
+  }
+  function delit() {
+  port.style.display="block"
+  log.style.display="none"
+    set.style.display="none";
+    set.style.display="none";
+    form.style.display="none";
+    signup.style.display="none"
+    portal.style.display="block"
+    psp.style.display="block"
+    logi.style.display="none"
+    logo.style.display="block"
+    }
+  
+
+function adm() {
+	port.style.display="none"
+  log.style.display="none"
+  	set.style.display="none";
+    set.style.display="none";
+    form.style.display="none";
+    signup.style.display="none"
+    portal.style.display="block"
+    psp.style.display="block"
+    logi.style.display="none"
+    logo.style.display="block"
+        sh.style.display="block"
+        
+    }
+      function admni() {
+        
+      
+  
+  data.style.display="block";
+  for (var i = 0; i < listOfCustomer.length; i++) {
+  data.innerHTML+=" <h3>Customers details"+eval(i+1)+"</h3>" 
+    data.innerHTML+= "<h3>account number:</h3>" + listOfCustomer[i].acctn0 + "<br>";
+data.innerHTML += "Name :" + listOfCustomer[i].Firstname + " " + listOfCustomer[i].Lastname + "<br>";
+data.innerHTML += "Date of Birth:" + listOfCustomer[i].date + "<br>";
+data.innerHTML += "Username :" + listOfCustomer[i].Username + "<br>";
+data.innerHTML += "Email:" + listOfCustomer[i].Email + "<br>";
+data.innerHTML += "Password:" + listOfCustomer[i].Password;
+  }
+}
+
+  
+
+function transfer() {
+  bal.innerHTML="your account balance is : "+ balance;
+
+  signu.style.display="none";
+    signup.style.display="none";
+ //  	log.style.display="none"
+ //    set.style.display="none";
+ //    form.style.display="none";
+     admin.style.display="block"
+     portal.style.display="block"
+    port.style.display="none"
+ //    logi.style.display="none"
+ //    logo.style.display="block"
+ //    wel.style.display="none"
+    data.style.display="none"
+	 tran.style.display="block";
+   tra.style.display="block"
+   tr.style.display="block"
+  bal.style.display="block";
+  sh.style.display="none"
+}
+function done() {
+  let amount =parseInt(tran.value) ;
+  for (var i = 0; i < listOfCustomer.length; i++) {
+   if ( listOfCustomer[i].acctn0 == tra.value) {
+    balance >= amount;
+    balance = balance - amount;
+   alert("You've successfully transfer " + tran.value + " to "+tra.value)
+   bal.innerHTML="your account balance is : "+ balance;
+
+ listOfCustomer[i].acctn0  + amount;
+   }
+  
+ else if (balance < amount) {
+  alert("insufficient fund")
+ } 
+ else{
+alert(tra.value +" is not a Registered Account ")
+ }                  
+   	}
+   }
+
+function myDetail() {
+  data.style.display="block";
+   for (var i = 0; i < listOfCustomer.length; i++) {
+   if (listOfCustomer[i].Username == luname.value && listOfCustomer[i].Password == lpassword.value){
+    data.innerHTML=" <h3>Customers details"+eval(i+1)+"</h3>" 
+    data.innerHTML= "account number:" + listOfCustomer.acctn0 + "<br>";
+data.innerHTML = "Name :" + listOfCustomer.Firstname + " " + listOfCustomer.Lastname + "<br>";
+data.innerHTML = "Date of Birth:" + listOfCustomer.date + "<br>";
+data.innerHTML = "Username :" + listOfCustomer.Username + "<br>";
+data.innerHTML = "Email:" + listOfCustomer.Email + "<br>";
+data.innerHTML = "Password:" + listOfCustomer.Password;
+   }
+
+else{
+
+ }
+}
+}
+
+</script>
+
+</body>
+</html>

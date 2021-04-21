@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<hea<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <link rel="shortcut icon"  href="image/code.jpeg">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+      <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>World Bank/admin</title>
+  </head>
+  <body class=" lg-m-5 md-m3 sm-m-0 bg-info text-light" >
+  <nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+      <div  class="container-fluid mx-3 text-right">
+        <a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+            <a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+              <a  id="admin" href="admin.html" class="nav-link mx-3 active text-light btn  ">Admin parnel</a>
+          
+                <a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+          
+        
+                      <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+                    <a href="portal.html" id="portal" class="nav-link mx-3 active text-light btn ">Personal Portal  </button>
+                  
+                    <a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+                    
+                  
+            
+        </div>
+      </div>
+    </nav>
+    
+  <a href="jerychatapp.html"><img id="chat" src="image/chat.png" alt=""></a> 
+<center>
+<div id="bal"></div>
+
+    <input type="number" id="ben" placeholder="Beneficiary acct. number"><br><br>
+
+    <input type="number" id="mon" placeholder="amount to transfer" ><br><br>
+    <button onclick="done()">done</button>
+  </center>
+    <Script>
+listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+
+var balance = listOfCustomer[0].Balance;
+bal.innerHTML='your account balance is :N'+ balance;
+
+
+
+
+
+function done() {
+  let amount =parseInt(mon.value) ;
+  for (var i = 0; i < listOfCustomer.length; i++) {
+   if ( listOfCustomer[i].acctn0 != ben.value) {
+    alert(ben.value +" is not a Registered Account ")
+   }
+   if (mon.value <= 0 || mon.value =="" ) {
+     alert('invalid input')
+   }
+  
+ else if (balance < amount) {
+  alert("insufficient fund")
+ } 
+ else{
+  listOfCustomer[i].Balance>= amount;
+    balance = balance - amount;
+   alert("You've successfully transfer " + mon.value + " to "+ben.value)
+   bal.innerHTML="your account balance is :N "+ balance;
+
+ eval(listOfCustomer[i].acctn0  + amount)
+ listOfCustomer[0].Balance=balance;
+
+ }                  
+   	}
+   }
+    </SCript>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon"  href="image/code.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Bank/admin</title>
+</head>
+<body class=" lg-m-5 md-m3 bg-info sm-m-0 text-light" >
+<nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+    <div  class="container-fluid mx-3 text-right">
+      <a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+          <a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+            <a  id="admin" href="admin.html" class="nav-link mx-3 active text-light btn  ">Admin parnel</a>
+        
+              <a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+        
+      
+                    <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+                  <a onclick="login()" id="portal" class="nav-link mx-3 active text-light btn ">Personal Portal  </button>
+                
+                  <a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+                  
+                
+          
+      </div>
+    </div>
+  </nav>
+  <a href="jerychatapp.html"><img id="chat" src="image/chat.png" alt=""></a>
+  <center>
+  <input type="text" id="ainp" placeholder="admin user name"><br><br>
+  <input type="password" id="apass" placeholder="password"><br><br>
+  <button id="but" onclick="ent()">Enter</button>
+  <div id="ad" style="display: none;">
+  <button onclick="adm()" >show details</button>
+  
+  <div id="data"></div></center>
+</div>
+    <script>
+   let admin=[];
+      var admini={
+        adminUsername:'Jerydam',
+        adminPassword:'CyberhackB'
+      } 
+      admin.push(admini)
+      localStorage.setItem('adminDetails', JSON.stringify(admin))
+      adminDetails = localStorage.admin?JSON.parse(localStorage.admin):[];
+      function ent(params) {
+        
+        for (var i = 0; i < admin.length; i++) {
+          
+        if (admin[i].adminUsername==ainp.value && admin[i].adminPassword== apass.value ) {
+          ad.style.display="block"
+          ainp.style.display="none"
+          apass.style.display="none"
+          but.style.display="none"
+        }
+        else{
+          alert("incorrect details if you're not an admin kindly leave or i call police")
+        }
+      }
+      }
+      
+      
+           var balance= 10000;
+
+let listOfCustomer;
+listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+
+        function adm() {
+	
+  data.style.display="block";
+  for (var i = 0; i < listOfCustomer.length; i++) {
+  data.innerHTML+=" <h3>Customers details"+eval(i+1)+"</h3>" 
+    data.innerHTML+= "<h3>account number:</h3>" + listOfCustomer[i].acctn0 + "<br>";
+data.innerHTML += "Name :" + listOfCustomer[i].Firstname + " " + listOfCustomer[i].Lastname + "<br>";
+data.innerHTML += "Date of Birth:" + listOfCustomer[i].date + "<br>";
+data.innerHTML += "Username :" + listOfCustomer[i].Username + "<button onclick='delit("+i+")'>delete</button>"+ "<br>";
+data.innerHTML += "Email:" + listOfCustomer[i].Email + "<button onclick='edit("+i+")'>edit</button>" + "<br>";
+  }
+}
+function delit() {
+					listOfCustomer.splice(JSON.parse(localStorage.allCustomer),1);
+					localStorage.allCustomer = JSON.stringify(listOfCustomer)
+					alert('Account Deleted successfully');
+					
+		}
+        function edit() {
+			
+            var edit = {
+        
+                  FirstName:pname.value,
+                  LastName : lname.value,
+                  Username: uname.value,
+                  date :pob.value,
+                  Password:password.value,
+                   Email:mail.value,
+                  Phonenumber:pane.value,
+            
+        
+        }
+                    for (var i = 0; i < listOfCustomer.length; i++) {
+                        if (edit.Email == listOfCustomer[i].Email && JSON.parse(localStorage.allCustomer) != i) {
+                            alert('Phone number already exist, please try another phone number')
+                            return
+                        } else {
+                            listOfCustomer.splice(JSON.parse(localStorage.login), 1, edited)
+                            localStorage.allCustomer = JSON.stringify(listOfCustomer)
+                            alert('Edit successful')
+                            return
+                        }
+                    }
+                    
+                }
+                function login() {
+for (var i = 0; i < listOfCustomer.length; i++) {
+  if (listOfCustomer[i].Username != luname.value && listOfCustomer[i].Password != lpassword.value) {
+        alert('details not matched');
+        return;
+  }
+
+else{
+  port.style.display="block"
+  log.style.display="none"
+          pname.value = listOfCustomer[i].Firstname;
+					lname.value = listOfCustomer[i].Lastname;
+					pame.value = listOfCustomer[i].Phonenumber;
+					uname.value=listOfCustomer[i].Username;
+					mail.value = listOfCustomer[i].Email
+					pob.value =listOfCustomer[i].date;
+        show.innerHTML =  listOfCustomer[i].Balance
+    
+    }
+
+
+ }
+
+
+
+}
+
+    </script>
+</body>
+</html>

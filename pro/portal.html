@@ -1,0 +1,111 @@
+
+  <div id="show"></div>
+	<div style="background-color: black;color: white;" id="bal"></div>
+		  <input type="text" disabled  id="pname" placeholder="First name" name=""><br><br>
+		  <input type="text" disabled  id="lname" placeholder="Last name" name=""><br><br>
+		  <input type="text" disabled id="uname" placeholder="Username" name=""><br><br>
+		  <input type="number" disabled id="pame" placeholder="Phonenumber" name=""><br><br>
+		  <input type="" disabled  id="pob" placeholder="DOB" name=""><br><br>
+		  <input type="email" disabled   id="mail" placeholder="email" name=""><br>
+<br>
+<button onclick="show()">all</button>
+		  <a class="btn btn-success" href="transfer.html">Transfer</a>
+		</div>
+	</main>
+	<a href="jerychatapp.html"><img style="width:30px; margin-left: 1000px;position: fixed;bottom: 50px;" src="image/wat.jpg" alt=""></a>
+
+	<script type="text/javascript">
+		     var balance= 10000;
+
+let listOfCustomer;
+listOfCustomer = localStorage.allCustomer?JSON.parse(localStorage.allCustomer):[];
+
+		
+			for (var i = 0; i < allCustomer.length; i++) {
+			if (JSON.parse(localStorage.login) == i) {
+				pname.value = listOfCustomer[i].Firstname;
+					lname.value = listOfCustomer[i].Lastname;
+					pame.value = listOfCustomer[i].Phonenumber;
+					uname.value=listOfCustomer[i].Username;
+					mail.value = listOfCustomer[i].Email
+					pob.value =listOfCustomer[i].date;
+
+			}
+		}
+					
+				
+		
+
+		function edit() {
+			
+	var edit = {
+
+          FirstName:pname.value,
+          LastName : lname.value,
+          Username: uname.value,
+          date :pob.value,
+           Email:mail.value,
+          Phonenumber:pame.value,
+    
+
+}
+			for (var i = 0; i < listOfCustomer.length; i++) {
+				if (edit.Email == listOfCustomer[i].Email && JSON.parse(localStorage.allCustomer) != i) {
+					alert('Phone number already exist, please try another phone number')
+					return
+				} else {
+					listOfCustomer.splice(JSON.parse(localStorage.login), 1, edited)
+					localStorage.allCustomer = JSON.stringify(listOfCustomer)
+					alert('Edit successful')
+					return
+				}
+			}
+			
+		}
+
+		
+
+		// function showBalance() {
+		// 	for (var i = 0; i < listOfCustomer.length; i++) {
+		// 		if (JSON.parse(localStorage.login) == i) {
+		// 			bank.innerHTML = 'Dear, ' +listOfCustomer[i].FirstName + ' your account balance is ' + listOfCustomer[i].amount;
+		// 		}
+		// 	}
+		// }
+
+		// function withdraw() {
+		// 	currentAmount = {}
+		// 	withdrawAmount = prompt('How much do you wish to withdraw?')
+		// 	user = prompt('Enter your account pin')
+		// 	for (var i = 0; i < listOfCustomer.length; i++) {
+		// 		if (JSON.parse(localStorage.login) == i && listOfCustomer[i].Password == user) {
+		// 			currentAmount.FirstName = listOfCustomer[i].FirstName;
+		// 			currentAmount.LastName =listOfCustomer[i].LastName;
+		// 			currentAmount.Call = listOfCustomer[i].Call;
+		// 			currentAmount.mail = listOfCustomer[i].mail;
+		// 			currentAmount.password = listOfCustomer[i].Password; 
+		// 			currentAmount.AccountNumber = listOfCustomer[i].AccountNumber;
+		// 			currentAmount.Username=listOfCustomer[i].Username;
+		// 			currentAmount.amount = eval(listOfCustomer[i].amount - withdrawAmount)
+		// 			bank.innerHTML = 'Your new balance is ' + currentAmount.amount;
+		// 			// userDetail[i].amount = currentAmount.amount;
+		// 			listOfCustomer.splice(JSON.parse(localStorage.login), 1, currentAmount)
+		// 			localStorage.allCustomer = JSON.stringify(listOfCustomer)
+		// 			return
+		// 		}
+		// 	}
+		// }
+			//
+    
+
+    
+    
+
+
+  
+
+		
+	</script>
+
+</body>
+</html>

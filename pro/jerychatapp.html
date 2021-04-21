@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <link rel="shortcut icon"  href="image/code.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.js"> 
+	<title>World Bank/Help</title>
+</head>
+	
+<body class=" lg-m-5 md-m3 bg-info sm-m-0 text-light" >
+	<nav class="navbar navbar-expand-lg bg-dark shadow-lg mb-2">
+	  <div  class="container-fluid mx-3 text-right">
+		<a   class="navbar-brand " href="#"><b>WORLD BANK</b><img  id="roll" src="image/roll.gif"></a> 
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div  class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul id="nav"  class="navbar-nav me-auto mb-2 mb-lg-0">
+			<a href="home.html"  class="nav-link mx-3 active text-light btn ">Home</a>
+			
+		  
+				<a href="signup.html" id="signup" onclick="myFunc()"  class="nav-link mx-3 active text-light btn ">Sign Up</a>
+		  
+		
+					  <a href="login.html" id="logi" onclick="lo()" class="nav-link mx-3 active text-light btn ">Login</a>
+					
+				  
+					<a href="logout.html" id="logo" class="nav-link mx-3 active text-light btn ">Log out</a>
+					
+				  
+			
+		</div>
+	  </div>
+	</nav>
+	 <center>
+<input class="fm" type="textarea" id="user" name="">
+<button onclick="send()">send</button>
+<div id="reply">How may i help you</div>
+<div id="stat"></div>
+</center>
+<script type="text/javascript">
+	var command=reply.innerHTML;
+function send() {
+	if (user.value =="") {
+		reply.innerHTML= "please input something so as to know what to do.<br> <br>"
+	}
+   if (user.value !="") 
+   {
+   	reply.innerHTML="thanks for your message,<br> we'll sort out your problem in a while. <br><br>"
+   
+	}
+	else{stat.innerHTML="if you're not satisfy with my reply<br>kindly visit our channel<a href='facebook.com/jeremiahoyeniran'>here</a>"
+	}
+}
+</script>
+</body>
+</html>
